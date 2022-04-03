@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CREATIVE AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Allerta Stencil'>
+  
+</head>
+
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<nav>
+  <input type="checkbox" id="check">
+  <label for="check" class="checkbtn">
+    <i class="fas fa-bars"></i>
+  </label>
+  <label class="logo">CREATIVE AI</label>
+  <ul>
+    <li><a class="active" href="#">Home</a></li>
+    <li><a href="#silhouette">Silhouette</a></li>
+    <li><a href="#character">Character</a></li>
+    <li><a href="#about">About</a></li>
+
+  </ul>
+</nav>
+<!-- Header -->
+
+  <div class="bg-image" style="background-image: url('/static/images/main.png');"></div>
+
+  <div class="bg-text">
+    CREATIVE AI
+  </div>
+<!-- Page content -->
+
+
+<div class="main-content-columns50" style="max-width:1100px">
+
+  <!-- About Section -->
+  <div class="row row-padding" id="silhouette">
+    <div class="column50 ">
+     <img src="/static/images/random-gen-512.png"  alt="Table Setting" width="512" height="512">
+    </div>
+    
+      <div class="column50 column50-margin">
+        <h1>Random character generation</h1><br>
+        <p class="column50-text">This option allows you to generate random black and white silhouettes as well as colored characters, to ensure the quality of the output we
+          project a random image from our dataset into the latent space, this will lead to an improvement of the quality of the characters, allow the appereance of more features and
+          avoid completely random images in the output.
+        </p>
+        <div class="column50-button">
+          <a href="/silhouette" class="btn btn-white"> Generate Silhouette</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+  <div class="main-content-columns50" style="max-width:1100px">
+  <div class="row row-padding" id="silhouette">
+    <div class="column50 ">
+     <img src="/static/images/guided-gen-512.png"  alt="Table Setting" width="512" height="512">
+    </div>
+    
+      <div class="column50 column50-margin">
+        <h1>Guided Character creation</h1><br>
+        <p class="column50-text">By using this tool you will be able to generate colored characters based on
+          black and white silhouettes that can be loaded directly by browsing your files or using a random 
+          one generated with the option above, there are 2 possible outputs, the first is limited to just coloring the silhouette without adding any 
+          additional details while the second will use the information learnt by our network to create a colored version of the original draft but with some 
+          additions and quality improvements.
+        </p>
+        <div class="column50-button">
+          <a href="/character" class="btn btn-white "> Generate Character</a>
+          
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+      
+  
+  
+ 
+  
+
+
+
+
+
+</body>
+</html>

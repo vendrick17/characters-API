@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<title>Random Generation</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="/static/style.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Allerta Stencil'>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>  
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+<body>
+
+<!-- Navbar (sit on top) -->
+<nav>
+  <input type="checkbox" id="check">
+  <label for="check" class="checkbtn">
+    <i class="fas fa-bars"></i>
+  </label>
+  <label class="logo">CREATIVE AI</label>
+  <ul>
+    <li><a class="active" href="/index">Home</a></li>
+    <li><a href="/silhouette">Silhouette</a></li>
+    <li><a href="/character">Character</a></li>
+    <li><a href="/about">About</a></li>
+  </ul>
+</nav>
+
+<!-- Page content -->
+<div class="main-content-columns90" style="max-width:1100px">
+  <div class="row row-padding" id="silhouette">
+    <div class="column90 side90">
+      <h1>Silhouette creation</h1>
+      <p class="column90-text">This tool will allow you to create random black and white silhouettes, our algorithm ensures you will only obtain the most useful results, some examples of generated silhouettes 
+        are shown below.
+        If you have any draft on mind that you are willing to color or improve, the best choice is to use our Create Character tool.</p>
+      
+      <div class="row row-padding">
+        
+        <form action="/generate_projection" method="POST">
+          <div class="column50">
+            <label class="container">Generate random B/W silhouette
+              <input type="checkbox" value='1' name='checkbox_type' checked="checked">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container">Generate random colored character
+              <input type="checkbox" value='2' name='checkbox_type'>
+              <span class="checkmark"></span>
+            </label>
+          </div>
+
+          <div class="column50">
+            <div class="row">
+              <form action="/generate_projection" method="POST" >
+                <div class="column90-button">
+                  <button class="btn btn-white" value="generate_projection">GENERATE</button>
+                </div>  
+              </form>
+              <div class="column90-button" style="margin-left: 50%;">
+                <form method="POST" action='/'>
+                  <input type="hidden" name="name" value="value" /> 
+                    <a href="/generate_projection" class="btn btn-white">clear output</a>
+                </form>
+              </div> 
+            </div>
+          </div>
+        </form>
+        <!--
+        <div class="column50">
+          <div class="row">
+            <div class="column90-button">
+              <form method="POST" action='/generate_projection'>
+                <input type="hidden" name="name" value="value" /> 
+                  <a href="/generate_projection" class="btn btn-white">generate</a>
+              </form>
+            </div>  
+            <div class="column90-button" style="margin-left: 50%;">
+              <form method="POST" action='/generate_projection'>
+                <input type="hidden" name="name" value="value" /> 
+                  <a href="/generate_projection" class="btn btn-white">clear output</a>
+              </form>
+            </div> 
+          </div>
+        </div>
+        -->
+      </div>
+
+      
+
+      <div class="show-images">
+        {% for name in names_colored %}
+          <img src="{{ url_for('static', filename = '/projections/colored/' + name ) }}" width="256" height="256" >
+        {% endfor %}\
+        {% for name in names_silhouette %}
+          <img src="{{ url_for('static', filename = '/projections/silhouette/' + name ) }}" width="256" height="256" >
+        {% endfor %}
+    </div>
+    </div>  
+  
+  <div class="column90 side10">
+    <img src="/static/images/process2.jpg"  alt="Table Setting" >
+  </div>
+</div>
+  <!-- About Section -->
+  
+</div>
+
+</body>
+</html>
